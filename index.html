@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkforceOS — Manage Your Workforce Without the Chaos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient Hero Background -->
+  <div class="hero-wrapper">
+    <div class="hero-bg-grid" aria-hidden="true">
+      <img src="saas-landing-assets/hero-grid.svg" alt="" />
+    </div>
+    <div class="hero-glow hero-glow-left" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-right" aria-hidden="true"></div>
+
+    <!-- Subtle Decorative Squares from Figma -->
+    <div class="deco-square deco-1" aria-hidden="true"></div>
+    <div class="deco-square deco-2" aria-hidden="true"></div>
+    <div class="deco-square deco-3" aria-hidden="true"></div>
+    <div class="deco-square deco-4" aria-hidden="true"></div>
+    <div class="deco-square deco-5" aria-hidden="true"></div>
+    <div class="deco-square deco-6" aria-hidden="true"></div>
+    <div class="deco-square deco-7" aria-hidden="true"></div>
+
+    <!-- Floating Navbar -->
+    <header class="navbar-outer">
+      <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="javascript:void(0)" class="nav-link">Features</a></li>
+          <li><a href="javascript:void(0)" class="nav-link">Pricing</a></li>
+          <li><a href="javascript:void(0)" class="nav-link">Integrations</a></li>
+          <li><a href="javascript:void(0)" class="nav-link">Resources</a></li>
+          <li><a href="javascript:void(0)" class="nav-link">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="btn-trial">
+            <span>Get free trial</span>
+            <img src="saas-landing-assets/icon-arrow.svg" alt="" class="btn-arrow" />
+          </button>
+          <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown -->
+      <div class="mobile-drawer" id="mobileDrawer">
+        <a href="javascript:void(0)" class="mobile-link">Features</a>
+        <a href="javascript:void(0)" class="mobile-link">Pricing</a>
+        <a href="javascript:void(0)" class="mobile-link">Integrations</a>
+        <a href="javascript:void(0)" class="mobile-link">Resources</a>
+        <a href="javascript:void(0)" class="mobile-link">About</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container" id="hero">
+      <!-- Floating App Integration Badges -->
+      <div class="floating-badge badge-tl float-slow" title="Slack Integration">
+        <img src="saas-landing-assets/hero-icon-1.png" alt="Slack" />
+      </div>
+      <div class="floating-badge badge-tr float-medium" title="Notion Integration">
+        <img src="saas-landing-assets/hero-icon-2.png" alt="Notion" />
+      </div>
+      <div class="floating-badge badge-bl float-medium" title="Google Workspace">
+        <img src="saas-landing-assets/hero-icon-4.png" alt="Google Workspace" />
+      </div>
+      <div class="floating-badge badge-br float-slow" title="Linear Integration">
+        <img src="saas-landing-assets/hero-icon-3.png" alt="Linear" />
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title hero-animate" style="--delay: 0.05s">
+          <span class="muted-phrase">Manage Your</span>
+          <span class="highlight-word">
+            Workforce
+            <img src="saas-landing-assets/hero-underline.svg" alt="" class="hero-underline" aria-hidden="true" />
+          </span>
+          <br />
+          Without the Chaos
+        </h1>
+
+        <p class="hero-subtitle hero-animate" style="--delay: 0.16s">
+          From attendance tracking to performance insights, manage everything in one place with a smarter employee management system.
+        </p>
+
+        <form class="hero-email-form hero-animate" id="heroEmailForm" style="--delay: 0.26s" novalidate>
+          <input
+            type="email"
+            id="heroEmailInput"
+            placeholder="Enter your mail"
+            aria-label="Enter your email address"
+            required
+          />
+          <button type="submit" class="btn-get-started">Get started</button>
+        </form>
+        <p class="form-feedback" id="heroFormFeedback" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Dashboard Preview -->
+      <div class="dashboard-frame-outer hero-animate" style="--delay: 0.36s">
+        <div class="dashboard-frame">
+          <div class="dashboard-slices">
+            <img src="saas-landing-assets/saas-slice-1.png" alt="Workforce Dashboard Overview Left" class="slice-img" />
+            <img src="saas-landing-assets/saas-slice-2.png" alt="Workforce Dashboard Overview Right" class="slice-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Section 2: Everything You Need (Bento Grid 1) -->
+  <section class="section container" id="features">
+    <div class="section-header reveal">
+      <h2 class="section-title">Everything You Need to Manage Your Team Efficiently</h2>
+      <p class="section-subtitle">
+        From attendance tracking to performance insights and team communication manage your entire workforce with powerful tools designed to simplify your daily operations
+      </p>
+    </div>
+
+    <div class="bento-grid-2x2">
+      <!-- Card 1: Performance Overview -->
+      <article class="bento-card reveal" style="--delay: 0.05s">
+        <div class="widget-box widget-performance">
+          <div class="widget-header">
+            <span class="widget-label">PERFORMANCE OVERVIEW</span>
+          </div>
+          <div class="wave-chart-wrap" id="waveChartWrap">
+            <div class="wave-tooltip" id="waveTooltip">Sun: 94%</div>
+            <svg id="perfWaveSvg" class="wave-chart-svg" viewBox="0 0 470 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Performance wave chart">
+              <defs>
+                <linearGradient id="waveAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#C7FE1E" stop-opacity="0.32" />
+                  <stop offset="100%" stop-color="#C7FE1E" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path id="perfWaveArea" fill="url(#waveAreaGrad)" />
+              <path id="perfWaveLine" stroke="#B7EC0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+              <g id="perfWaveDots"></g>
+              <circle id="perfActiveHalo" r="10" fill="rgba(199, 254, 30, 0.35)" />
+              <circle id="perfActiveDot" r="6" fill="#7BA400" stroke="#C7FE1E" stroke-width="2.5" />
+            </svg>
+          </div>
+          <div class="day-pills" role="tablist" aria-label="Performance days">
+            <button class="day-pill" data-day="Tue" data-index="0">Tue</button>
+            <button class="day-pill" data-day="Wed" data-index="1">Wed</button>
+            <button class="day-pill" data-day="Fri" data-index="2">Fri</button>
+            <button class="day-pill active" data-day="Sun" data-index="3">Sun</button>
+            <button class="day-pill" data-day="Thu" data-index="4">Thu</button>
+            <button class="day-pill" data-day="Mon" data-index="5">Mon</button>
+          </div>
+        </div>
+        <div class="card-copy">
+          <h3>Complete Visibility Over Your Workforce</h3>
+          <p>Track employee activity attendance and performance in real time with a centralized dashboard designed for smarter decision making</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Attendance & Leave -->
+      <article class="bento-card reveal" style="--delay: 0.12s">
+        <div class="widget-box widget-leave">
+          <div class="leave-row">
+            <div class="leave-person">
+              <img src="saas-landing-assets/avatar-rebeka-1c6653.png" alt="Rebeka Disuza" class="avatar-62" />
+              <div>
+                <div class="person-name">Rebeka Disuza</div>
+                <div class="person-role">HR Manager</div>
+              </div>
+            </div>
+            <span class="badge-orange">
+              <span class="badge-dot"></span>
+              Annual Leave
+            </span>
+            <span class="leave-date">12 June - 24 June</span>
+          </div>
+        </div>
+        <div class="card-copy">
+          <h3>Complete Visibility Over Your Workforce</h3>
+          <p>Monitor check ins work hours and leave status effortlessly with automated tracking that keeps everything accurate and up to date</p>
+        </div>
+      </article>
+
+      <!-- Card 3: Connected & Aligned -->
+      <article class="bento-card reveal" style="--delay: 0.18s">
+        <div class="widget-connected-wrap">
+          <img src="saas-landing-assets/card-connected-graphic.svg" alt="Team connection illustration" class="connected-graphic" />
+        </div>
+        <div class="card-copy">
+          <h3>Keep Your Team Connected and Aligned</h3>
+          <p>Enable seamless communication task assignments and real time updates so your team stays productive and in sync</p>
+        </div>
+      </article>
+
+      <!-- Card 4: Monthly Reports -->
+      <article class="bento-card reveal" style="--delay: 0.24s">
+        <div class="widget-box widget-monthly">
+          <div class="widget-header">
+            <span class="widget-label">MONTHLY REPORTS</span>
+            <div class="range-toggle" role="group" aria-label="Report Range">
+              <button class="range-btn active" data-range="7M">7M</button>
+              <button class="range-btn" data-range="10M">10M</button>
+              <button class="range-btn" data-range="12M">12M</button>
+            </div>
+          </div>
+          <div class="bar-chart" id="monthlyBarChart">
+            <div class="bar-col" data-month="Jan">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 26px"></div>
+                <div class="bar bar-dark" style="--h: 38px"></div>
+              </div>
+              <span class="bar-label">Jan</span>
+            </div>
+            <div class="bar-col" data-month="Feb">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 40px"></div>
+                <div class="bar bar-dark" style="--h: 32px"></div>
+              </div>
+              <span class="bar-label">Feb</span>
+            </div>
+            <div class="bar-col" data-month="Mar">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 18px"></div>
+                <div class="bar bar-dark" style="--h: 38px"></div>
+              </div>
+              <span class="bar-label">Mar</span>
+            </div>
+            <div class="bar-col active" data-month="Apr">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 32px"></div>
+                <div class="bar bar-dark" style="--h: 50px"></div>
+              </div>
+              <span class="bar-label">Apr</span>
+            </div>
+            <div class="bar-col" data-month="May">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 45px"></div>
+                <div class="bar bar-dark" style="--h: 40px"></div>
+              </div>
+              <span class="bar-label">May</span>
+            </div>
+            <div class="bar-col" data-month="Jun">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 40px"></div>
+                <div class="bar bar-dark" style="--h: 23px"></div>
+              </div>
+              <span class="bar-label">Jun</span>
+            </div>
+            <div class="bar-col" data-month="Jul">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 45px"></div>
+                <div class="bar bar-dark" style="--h: 35px"></div>
+              </div>
+              <span class="bar-label">Jul</span>
+            </div>
+            <div class="bar-col" data-month="Aug">
+              <div class="bar-pair">
+                <div class="bar bar-lime" style="--h: 12px"></div>
+                <div class="bar bar-dark" style="--h: 30px"></div>
+              </div>
+              <span class="bar-label">Aug</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-copy">
+          <h3>Make Better Decisions With Real Insights</h3>
+          <p>Analyze employee performance track progress and generate actionable reports to improve efficiency and team growth</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 3: Trusted by Growing Teams Worldwide -->
+  <section class="section container" id="stats">
+    <div class="section-header reveal">
+      <h2 class="section-title">Trusted by Growing Teams Worldwide</h2>
+      <p class="section-subtitle">
+        See how businesses are simplifying employee management improving productivity and scaling their teams with our all in one platform
+      </p>
+    </div>
+
+    <div class="trusted-showcase reveal">
+      <div class="trusted-banner-img">
+        <img src="saas-landing-assets/trusted-banner-404cf8.png" alt="Growing team collaborating" />
+      </div>
+
+      <div class="stats-glass-card">
+        <div class="stat-item">
+          <div class="stat-value" data-target="10000" data-suffix="+" data-format="comma">10,000+</div>
+          <div class="stat-label">Active Employees</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" data-target="97" data-suffix="%">97%</div>
+          <div class="stat-label">Attendance Accuracy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" data-target="500" data-suffix="K+">500K+</div>
+          <div class="stat-label">Tasks and Workflows</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" data-target="150" data-suffix="+">150+</div>
+          <div class="stat-label">Companies Using</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Transform the Way You Manage Your Workforce -->
+  <section class="section container relative-section" id="transform">
+    <div class="ambient-glow-mid" aria-hidden="true"></div>
+
+    <div class="section-header reveal">
+      <h2 class="section-title">Transform the Way You Manage Your Workforce</h2>
+      <p class="section-subtitle">
+        Everything you need to streamline employee operations improve productivity and gain complete control over your team in one powerful platform
+      </p>
+    </div>
+
+    <div class="transform-grid">
+      <div class="transform-left">
+        <!-- Card: Employee Management Simplified -->
+        <article class="bento-card transform-card-sm reveal" style="--delay: 0.06s">
+          <div class="mgmt-toolbar">
+            <div class="mgmt-dock" role="tablist" aria-label="Management Modes">
+              <button class="dock-btn active" data-mode="Employees" aria-label="Employees">
+                <img src="saas-landing-assets/icon-mgmt-3.svg" alt="" />
+              </button>
+              <button class="dock-btn" data-mode="Tasks" aria-label="Tasks">
+                <img src="saas-landing-assets/icon-mgmt-2.svg" alt="" />
+              </button>
+              <button class="dock-btn" data-mode="Files" aria-label="Files">
+                <img src="saas-landing-assets/icon-mgmt-1.svg" alt="" />
+              </button>
+            </div>
+
+            <div class="mgmt-search">
+              <img src="saas-landing-assets/icon-search.svg" alt="" />
+              <input
+                type="text"
+                id="mgmtSearchInput"
+                placeholder="Search employees, tasks, files…"
+                aria-label="Search employees, tasks, files"
+              />
+            </div>
+          </div>
+
+          <div class="card-copy">
+            <h3>Employee Management Simplified</h3>
+            <p>Easily manage employee data roles and activities in one centralized system designed for clarity and efficiency</p>
+          </div>
+        </article>
+
+        <!-- Card: Smart Workflows and Automation -->
+        <article class="bento-card transform-card-sm reveal" style="--delay: 0.14s">
+          <div class="workflow-row">
+            <div class="avatar-stack">
+              <img src="saas-landing-assets/workflow-avatar-1.png" alt="Team member 1" class="stack-avatar" />
+              <img src="saas-landing-assets/workflow-avatar-2-679df7.png" alt="Team member 2" class="stack-avatar" />
+              <img src="saas-landing-assets/workflow-avatar-3.png" alt="Team member 3" class="stack-avatar" />
+              <span class="stack-count">+12</span>
+            </div>
+            <span class="workflow-tag">WORKFLOWS AUTOMATED</span>
+          </div>
+
+          <div class="card-copy">
+            <h3>Smart Workflows and Automation</h3>
+            <p>Automate repetitive tasks approvals and processes so your team can focus on what truly matters</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right Tall Card: Real Time Insights and Reporting -->
+      <article class="bento-card transform-card-tall reveal" style="--delay: 0.18s">
+        <div class="insights-top">
+          <span class="insights-title">PERFORMANCE OVERVIEW</span>
+          <button class="btn-generate" id="generateReportBtn">Generate Reports</button>
+        </div>
+
+        <div class="insights-chart-area">
+          <div class="y-axis" aria-hidden="true">
+            <span>100</span>
+            <span>80</span>
+            <span>60</span>
+            <span>40</span>
+          </div>
+          <div class="chart-visual-wrap">
+            <img src="saas-landing-assets/chart-insights.svg" alt="Real time insights area chart" class="insights-svg" />
+            <div class="x-axis" id="insightsMonths">
+              <button class="month-tab" data-m="Jan">Jan</button>
+              <button class="month-tab" data-m="Feb">Feb</button>
+              <button class="month-tab" data-m="Mar">Mar</button>
+              <button class="month-tab active" data-m="Apr">Apr</button>
+              <button class="month-tab" data-m="May">May</button>
+              <button class="month-tab" data-m="Jun">Jun</button>
+              <button class="month-tab" data-m="Jul">Jul</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-copy">
+          <h3>Real Time Insights and Reporting</h3>
+          <p>Track performance monitor trends and generate actionable reports to make faster and smarter decisions</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 5: Testimonials -->
+  <section class="section container" id="testimonials">
+    <div class="testimonials-shell reveal">
+      <img src="saas-landing-assets/quote-watermark.svg" alt="" class="quote-watermark" aria-hidden="true" />
+
+      <div class="testimonials-intro">
+        <div class="quote-icon-box">
+          <img src="saas-landing-assets/icon-quote.svg" alt="" />
+        </div>
+        <h2>What Teams Are Saying About Us</h2>
+        <p>Real feedback from teams who are simplifying employee management and improving productivity every day</p>
+      </div>
+
+      <div class="testimonials-marquee-area">
+        <!-- Column 1 -->
+        <div class="marquee-col marquee-up">
+          <div class="marquee-track">
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-1.png" alt="Sarah Mitchell" />
+                <div>
+                  <div class="t-name">Sarah Mitchell</div>
+                  <div class="t-company">BrightCore Solutions</div>
+                </div>
+              </div>
+              <p class="t-quote">Managing employee attendance and performance used to take hours every week now everything is automated and easy to track in one place.</p>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-2.png" alt="David Chen" />
+                <div>
+                  <div class="t-name">David Chen</div>
+                  <div class="t-company">NexaFlow Inc</div>
+                </div>
+              </div>
+              <p class="t-quote">This platform completely changed how we manage our team workflows approvals and daily operations are now smooth and efficient</p>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-3.png" alt="Daniel Kim" />
+                <div>
+                  <div class="t-name">Daniel Kim</div>
+                  <div class="t-company">NexaFlow Inc</div>
+                </div>
+              </div>
+              <p class="t-quote">Helped us scale faster without adding complexity.</p>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-1.png" alt="" />
+                <div>
+                  <div class="t-name">Sarah Mitchell</div>
+                  <div class="t-company">BrightCore Solutions</div>
+                </div>
+              </div>
+              <p class="t-quote">Managing employee attendance and performance used to take hours every week now everything is automated and easy to track in one place.</p>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-2.png" alt="" />
+                <div>
+                  <div class="t-name">David Chen</div>
+                  <div class="t-company">NexaFlow Inc</div>
+                </div>
+              </div>
+              <p class="t-quote">This platform completely changed how we manage our team workflows approvals and daily operations are now smooth and efficient</p>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-3.png" alt="" />
+                <div>
+                  <div class="t-name">Daniel Kim</div>
+                  <div class="t-company">NexaFlow Inc</div>
+                </div>
+              </div>
+              <p class="t-quote">Helped us scale faster without adding complexity.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="marquee-col marquee-down">
+          <div class="marquee-track">
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-4.png" alt="Amina Rahman" />
+                <div>
+                  <div class="t-name">Amina Rahman</div>
+                  <div class="t-company">OrbitX</div>
+                </div>
+              </div>
+              <p class="t-quote">We finally have full visibility over our workforce the insights and reports help us make smarter decisions every day</p>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-5.png" alt="Michael Torres" />
+                <div>
+                  <div class="t-name">Michael Torres</div>
+                  <div class="t-company">ScaleBridge</div>
+                </div>
+              </div>
+              <p class="t-quote">Our HR team saved hours every week by automating repetitive tasks and processes.</p>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-6.png" alt="Michael Torres" />
+                <div>
+                  <div class="t-name">Michael Torres</div>
+                  <div class="t-company">ScaleBridge</div>
+                </div>
+              </div>
+              <p class="t-quote">Everything works seamlessly from attendance tracking to reporting it fits perfectly into our daily workflow.</p>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-7.png" alt="Olivia Brooks" />
+                <div>
+                  <div class="t-name">Olivia Brooks</div>
+                  <div class="t-company">ScaleBridge</div>
+                </div>
+              </div>
+              <p class="t-quote">Our HR team saved hours every week by automating repetitive tasks and processes.</p>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-4.png" alt="" />
+                <div>
+                  <div class="t-name">Amina Rahman</div>
+                  <div class="t-company">OrbitX</div>
+                </div>
+              </div>
+              <p class="t-quote">We finally have full visibility over our workforce the insights and reports help us make smarter decisions every day</p>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-5.png" alt="" />
+                <div>
+                  <div class="t-name">Michael Torres</div>
+                  <div class="t-company">ScaleBridge</div>
+                </div>
+              </div>
+              <p class="t-quote">Our HR team saved hours every week by automating repetitive tasks and processes.</p>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-6.png" alt="" />
+                <div>
+                  <div class="t-name">Michael Torres</div>
+                  <div class="t-company">ScaleBridge</div>
+                </div>
+              </div>
+              <p class="t-quote">Everything works seamlessly from attendance tracking to reporting it fits perfectly into our daily workflow.</p>
+            </div>
+
+            <div class="testimonial-card" aria-hidden="true">
+              <div class="t-header">
+                <img src="saas-landing-assets/testimonial-7.png" alt="" />
+                <div>
+                  <div class="t-name">Olivia Brooks</div>
+                  <div class="t-company">ScaleBridge</div>
+                </div>
+              </div>
+              <p class="t-quote">Our HR team saved hours every week by automating repetitive tasks and processes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Frequently Asked Questions -->
+  <section class="section container" id="faq">
+    <div class="section-header reveal">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">
+        Everything you need to know about managing your team and using our platform effectively
+      </p>
+    </div>
+
+    <div class="faq-layout">
+      <div class="faq-card reveal" style="--delay: 0.05s">
+        <div class="faq-item active">
+          <button class="faq-trigger" aria-expanded="true">
+            <span class="faq-q-left">
+              <img src="saas-landing-assets/icon-faq-bullet.svg" alt="" class="faq-bullet" />
+              <span>What features are included in the platform ?</span>
+            </span>
+            <img src="saas-landing-assets/icon-faq-toggle.svg" alt="" class="faq-toggle-icon" />
+          </button>
+          <div class="faq-panel">
+            <p>Our platform includes real-time attendance tracking, automated leave approvals, performance analytics, team messaging, and customizable monthly reporting—all in one unified workspace.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q-left">
+              <img src="saas-landing-assets/icon-faq-bullet.svg" alt="" class="faq-bullet" />
+              <span>Is the platform suitable for growing businesses</span>
+            </span>
+            <img src="saas-landing-assets/icon-faq-toggle.svg" alt="" class="faq-toggle-icon" />
+          </button>
+          <div class="faq-panel">
+            <p>Yes! Whether you are a 10-person startup or scaling past 1,000+ employees across multiple offices, roles, permissions, and automated workflows scale effortlessly with your team.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q-left">
+              <img src="saas-landing-assets/icon-faq-bullet.svg" alt="" class="faq-bullet" />
+              <span>Can I track employee attendance in real time</span>
+            </span>
+            <img src="saas-landing-assets/icon-faq-toggle.svg" alt="" class="faq-toggle-icon" />
+          </button>
+          <div class="faq-panel">
+            <p>Absolutely. You get live check-in/check-out status, shift adherence alerts, and instant visibility into who is working remotely, in-office, or on scheduled leave.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q-left">
+              <img src="saas-landing-assets/icon-faq-bullet.svg" alt="" class="faq-bullet" />
+              <span>Does the platform support team collaboration</span>
+            </span>
+            <img src="saas-landing-assets/icon-faq-toggle.svg" alt="" class="faq-toggle-icon" />
+          </button>
+          <div class="faq-panel">
+            <p>Yes, it integrates seamlessly with Slack, Notion, Google Workspace, and Linear while providing built-in task assignments, shared timelines, and real-time status updates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-q-left">
+              <img src="saas-landing-assets/icon-faq-bullet.svg" alt="" class="faq-bullet" />
+              <span>Is my company data secure</span>
+            </span>
+            <img src="saas-landing-assets/icon-faq-toggle.svg" alt="" class="faq-toggle-icon" />
+          </button>
+          <div class="faq-panel">
+            <p>Security is built in from day one with SOC 2 Type II compliance, end-to-end TLS/AES-256 encryption, SSO support, and granular role-based access controls.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-image-card reveal" style="--delay: 0.15s">
+        <img src="saas-landing-assets/faq-image.png" alt="Team member using workforce platform" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
