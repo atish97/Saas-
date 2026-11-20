@@ -242,16 +242,33 @@ a {
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
+.mobile-menu-btn.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .mobile-drawer {
   display: none;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: calc(100% + 8px);
+  z-index: 101;
   max-width: 700px;
-  margin: 8px auto 0;
+  margin: 0 auto;
   background: var(--dark-olive);
   border-radius: 12px;
   padding: 12px 20px;
   flex-direction: column;
   gap: 10px;
-  box-shadow: 0 16px 32px rgba(25, 29, 2, 0.2);
+  box-shadow: 0 16px 32px rgba(25, 29, 2, 0.24);
 }
 
 .mobile-drawer.open {
@@ -389,6 +406,10 @@ a {
   color: #3d4f03;
 }
 
+.form-feedback:empty {
+  display: none;
+}
+
 .form-feedback.error {
   color: #b93815;
 }
@@ -440,7 +461,7 @@ a {
 
 /* Dashboard Frame */
 .dashboard-frame-outer {
-  margin-top: 64px;
+  margin-top: 44px;
   position: relative;
   z-index: 3;
 }
@@ -1641,20 +1662,75 @@ a {
 }
 
 @media (max-width: 768px) {
+  .navbar-outer {
+    position: fixed;
+    top: 8px;
+    left: 0;
+    right: 0;
+    padding-top: 0;
+    padding-inline: 12px;
+  }
+  .hero {
+    padding-top: 96px;
+  }
+  .dashboard-frame-outer {
+    margin-top: 28px;
+  }
   .navbar {
     padding-left: 16px;
+    padding-right: 16px;
   }
   .nav-links {
     display: none;
+  }
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
   }
   .mobile-menu-btn {
     display: flex;
   }
   .bento-grid-2x2 {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .section {
+    padding-block: 44px;
+  }
+  #features.section {
+    padding-top: 84px;
+  }
+  .section-header {
+    margin: 0 auto 24px;
+  }
+  .section-subtitle {
+    margin-top: 10px;
+  }
+  #features .section-header {
+    margin-bottom: 36px;
+  }
+  .faq-layout {
+    gap: 24px;
+  }
+  .bento-card {
+    padding: 20px;
+    gap: 16px;
+  }
+  .transform-grid,
+  .transform-left {
+    gap: 16px;
+  }
+  .transform-card-sm,
+  .transform-card-tall {
+    min-height: auto;
+  }
+  .trusted-showcase {
+    padding-bottom: 12px;
   }
   .testimonials-shell {
-    padding: 32px 24px;
+    padding: 24px 18px;
+    min-height: auto;
+    gap: 20px;
   }
   .testimonials-marquee-area {
     grid-template-columns: 1fr;
@@ -1664,14 +1740,82 @@ a {
     display: none;
   }
   .trusted-banner-img {
-    height: 260px;
+    height: 240px;
     border-radius: 24px;
   }
   .stats-glass-card {
     grid-template-columns: 1fr 1fr;
-    padding: 24px 18px;
+    margin-top: -36px;
+    padding: 20px 16px;
+    gap: 14px;
+  }
+  .faq-card {
+    padding: 14px 18px;
+  }
+  .faq-trigger {
+    padding: 14px 0;
   }
   .faq-image-card {
-    min-height: 280px;
+    min-height: 240px;
+  }
+
+  /* Disable all mouse-enter / hover effects on mobile; keep click (:active) feedback */
+  .nav-link:hover,
+  .btn-trial:hover,
+  .btn-trial:hover .btn-arrow,
+  .btn-get-started:hover,
+  .floating-badge:hover,
+  .bento-card:hover,
+  .bento-card:hover .connected-graphic,
+  .day-pill:hover,
+  .bar-col:hover .bar,
+  .trusted-banner-img:hover img,
+  .avatar-stack:hover .stack-avatar,
+  .btn-generate:hover,
+  .month-tab:hover,
+  .faq-image-card:hover img {
+    transform: none !important;
+    box-shadow: none;
+  }
+  .nav-link:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .btn-trial:hover {
+    background: var(--lime);
+  }
+  .btn-get-started:hover,
+  .btn-generate:hover {
+    background: var(--dark-olive);
+  }
+  .bento-card:hover {
+    border-color: rgba(224, 248, 150, 0.85);
+  }
+  .day-pill:hover,
+  .month-tab:hover {
+    background: transparent;
+    color: var(--text-muted);
+  }
+  .day-pill.active:hover {
+    background: var(--dark-olive);
+    color: #ffffff;
+  }
+  .month-tab.active:hover {
+    background: rgba(200, 240, 5, 0.35);
+    color: var(--dark);
+  }
+  .testimonials-marquee-area:hover .marquee-track {
+    animation-play-state: running;
+  }
+
+  .btn-trial:active,
+  .btn-get-started:active,
+  .btn-generate:active,
+  .day-pill:active,
+  .range-btn:active,
+  .dock-btn:active,
+  .month-tab:active,
+  .faq-trigger:active {
+    transform: scale(0.97) !important;
+    opacity: 0.9;
   }
 }
